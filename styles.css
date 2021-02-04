@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+.nav-bar {
+    background-color: #cccccc;
+    padding: 70px;
+}
+.search-bar {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    height: 50px;
+    padding-left: 20px;
+    margin: 30px;
+    color: #555555;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.icon {
+    position: absolute;
+    padding-right: 100px;
+    color: #aaaaaa;
+    left: 100px;
+    z-index: 1;
+    font-size: 24px;
+}
+.input {
+    width: 1090px;
+    height: 50px;
+    padding-left: 150px;
+    font-size: 24px;
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a b c";
+    width: 800px;
+    margin: auto;
+    z-index: 1;
+    gap: 10px;
+    position: relative;
+    bottom: 45px;
+}
+
+.slide1 {
+    grid-area: a;
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.slide2 {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.slide3 {
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.cards {
+    width: 200px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: blueviolet;
+display: block;
+min-height: 160px;
+}
+
+li {
+    list-style: none;
+}
+.cards1 {
+    max-width: 220px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    min-height: 190px;
+    object-fit: contain;
+}
+
+.cards2 {
+    width: 220px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: blueviolet;
+display: block;
+min-height: 260px;
+}
+
+.cards3 {
+    width: 220px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: blueviolet;
+display: block;
+min-height: 220px;
+}
+
+li {
+    position: relative;
+}
+
+h2 {
+    position: absolute;
+    bottom: 20px;
+    font-size: 10px;
+    color: white;
+    padding-left: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+    color: white;
+    padding-left: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+/* img {
+    object-fit: cover;
+    width: 260px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+} */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 40px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow:nhidden; /* Enable scroll if needed */
+    
+    background-color: rgba(128,128,128,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+      position: relative;
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 70vh;
+  }
+  
+  
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+    
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    color: black;
+    background-color: white;
+    padding: 15px 30px 40px 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    height: 30px;
+    margin-bottom: 0;
+  }
+  #caption2 {
+      position: relative;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    color: #aaaaaa;
+    background-color: white;
+    padding: 0 30px 10px 30px;
+    height: 50px;
+    margin-top: 0;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption, #caption2 {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
