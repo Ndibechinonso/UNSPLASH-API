@@ -6,7 +6,9 @@
 }
 .nav-bar {
   background-color: #cccccc;
+  display: flex;
   padding: 70px;
+  justify-content: center;
 }
 .search-bar {
   position: relative;
@@ -24,13 +26,13 @@
   position: absolute;
   padding-right: 100px;
   color: #aaaaaa;
-  left: 280px;
+  left: 5%;
   top: 25px;
   z-index: 1;
   font-size: 24px;
 }
 .input {
-  width: 1000px;
+  min-width: 1000px;
   height: 70px;
   padding-left: 92px;
   font-size: 24px;
@@ -117,7 +119,7 @@ p {
 
 img {
   object-fit: cover;
-  width: 240px;
+  min-width: 240px;
   background: rgba(0, 0, 0, 0.9);
   border-radius: 7px;
 }
@@ -214,4 +216,33 @@ img {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .input {
+    min-width: 700px;
+    padding-left: 60px;
+  }
+  
+}
+
+@media only screen and (max-width: 950px) {
+  .input {
+    min-width: 700px;
+    padding-left: 60px;
+  }
+
+  .img {
+    width: 100px;
+  }
+
+  .input {
+    min-width: 500px;
+    padding-left: 60px;
+  }
+  
+  .icon {
+    left: 7%;
+  }
 }
