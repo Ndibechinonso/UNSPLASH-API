@@ -21,8 +21,6 @@ const getData = query => {
                 console.log(data.results)
                 let imgName = document.createElement("h2")
                 let imgLocation = document.createElement("p")
-                imgCard.classList.add("card");
-
                 if (item.user.first_name === null || item.user.last_name === null || item.user.location === null) {
                     `${item.user.first_name} === ""`;
                     `${item.user.last_name} === ""`;
