@@ -12,33 +12,36 @@
 
 <body>
     <div class="nav-bar">
-   
-        <div class="search-bar"><form id="form"><input class="input" placeholder="Search for photo" onfocus="this.placeholder = ''"
-            onblur="this.placeholder = 'Search for photo'"><i class="fas fa-search icon"></i></form>
+        <div class="search-bar">
+            <form id="form"><input class="input" placeholder="Search for photo" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Search for photo'"><i class="fas fa-search icon"></i></form>
         </div>
     </div>
+
     <div class="photo-grid">
         <div class="slide1">
         </div>
         <div class="slide2">
         </div>
         <div class="slide3">
-
         </div>
 
         <div id="myModal" class="modal">
-            <!-- The Close Button -->
             <span class="close">&times;</span>
-
-            <!-- Modal Content (The Image) -->
             <img class="modal-content" id="img01">
-
-            <!-- Modal Caption (Image Text) -->
             <div id="caption"></div>
             <div id="caption2"></div>
         </div>
-
     </div>
+
+    <div class="loading">
+        <div class="spinner">
+            <div class="mask">
+                <div class="maskedCircle"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

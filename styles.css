@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  padding: 0;
   margin: 0;
 }
 .nav-bar {
@@ -11,6 +12,7 @@
   padding: 70px;
   justify-content: center;
 }
+
 .search-bar {
   position: relative;
   display: flex;
@@ -32,6 +34,7 @@
   z-index: 1;
   font-size: 24px;
 }
+
 .input {
   min-width: 1000px;
   height: 70px;
@@ -77,12 +80,6 @@
   flex-direction: column;
 }
 
-.cards {
-  max-width: 220px;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
 div {
   position: relative;
   padding-left: 0;
@@ -98,8 +95,8 @@ div {
   width: 100%;
   max-width: 240px;
   padding: 30px;
-   margin-bottom: -5px; 
-  
+  margin-bottom: -5px;
+  border-radius: 7px;
 }
 
 h2 {
@@ -140,7 +137,6 @@ img {
   background-color: rgba(128, 128, 128, 0.9);
 }
 
-/* Modal Content (Image) */
 .modal-content {
   position: relative;
   margin: auto;
@@ -154,7 +150,6 @@ img {
   border-top-left-radius: 10px;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
   margin: auto;
   display: block;
@@ -186,7 +181,6 @@ img {
   border-bottom-left-radius: 10px;
 }
 
-/* Add Animation - Zoom in the Modal */
 .modal-content,
 #caption,
 #caption2 {
@@ -203,7 +197,6 @@ img {
   }
 }
 
-/* The Close Button */
 .close {
   position: absolute;
   top: 15px;
@@ -221,13 +214,11 @@ img {
   cursor: pointer;
 }
 
-
 @media only screen and (max-width: 1100px) {
   .input {
     min-width: 700px;
     padding-left: 60px;
   }
-  
 }
 
 @media only screen and (max-width: 950px) {
@@ -244,8 +235,48 @@ img {
     min-width: 500px;
     padding-left: 60px;
   }
-  
+
   .icon {
     left: 7%;
   }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+}
+
+.loading .maskedCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  border: 3px solid rgb(73, 43, 122);
+}
+
+.loading .mask {
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.loading .spinner {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 26px;
+  height: 26px;
+  animation: spin 1s infinite linear;
 }

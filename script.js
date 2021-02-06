@@ -1,6 +1,5 @@
 const grid = document.querySelector(".photo-grid")
 const slide1 = document.querySelector(".slide1")
-const card1 = document.querySelector(".card1")
 const slide2 = document.querySelector(".slide2")
 const slide3 = document.querySelector(".slide3")
 const span = document.querySelector(".close")
@@ -23,6 +22,7 @@ const getData = query => {
                 let imgName = document.createElement("h2")
                 let imgLocation = document.createElement("p")
                 imgCard.classList.add("card");
+
                 if (item.user.first_name === null || item.user.last_name === null || item.user.location === null) {
                     `${item.user.first_name} === ""`;
                     `${item.user.last_name} === ""`;
@@ -32,16 +32,16 @@ const getData = query => {
                 imgCard.innerHTML = `<img src=${item.urls.thumb} />`
                 imgName.innerHTML = `${item.user.first_name} ${item.user.last_name}`
                 if (item.user.first_name === null) {
-                    imgName.innerHTML = `${item.user.last_name}` 
+                    imgName.innerHTML = `${item.user.last_name}`
                 }
-                else if (item.user.last_name === null){
-                    imgName.innerHTML = `${item.user.first_name}`  
+                else if (item.user.last_name === null) {
+                    imgName.innerHTML = `${item.user.first_name}`
                 }
                 imgLocation.innerHTML = `${item.user.location}`
                 if (item.user.location === null) {
                     imgLocation.innerHTML = "";
                 }
-               
+
                 overlay.append(imgName)
                 overlay.append(imgLocation)
                 imgCard.append(overlay)
@@ -66,9 +66,7 @@ const getData = query => {
                 span.onclick = function () {
                     modal.style.display = "none";
                 }
-
             })
-
         })
 }
 
@@ -79,7 +77,6 @@ form.addEventListener("submit", e => {
     slide3.innerHTML = "";
     getData(input.value);
     input.value = "";
-
 });
 
 window.onload = () => getData("african")
