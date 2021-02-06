@@ -8,23 +8,40 @@ const modal = document.querySelector("#myModal")
 const modalImg = document.getElementById("img01")
 const captionText = document.getElementById("caption")
 const captionText2 = document.getElementById("caption2")
+const form = document.getElementById("form")
+const input = document.querySelector(".input")
 
-const getData = () => {
-    fetch("https://api.unsplash.com/search/photos?client_id=LTNB5WMcNPir06RnJxoWG8GIAVN-TQhb6tfwzRNybjk&query=african&per_page=8")
+const getData = query => {
+    fetch(`https://api.unsplash.com/search/photos?client_id=LTNB5WMcNPir06RnJxoWG8GIAVN-TQhb6tfwzRNybjk&query=${query}&per_page=8`)
         .then(res => res.json())
         .then(data => {
             data.results.forEach((item, index) => {
                 let imgCard = document.createElement("div")
                 let overlay = document.createElement("div")
                 overlay.classList.add("content")
-
+                console.log(data.results)
                 let imgName = document.createElement("h2")
                 let imgLocation = document.createElement("p")
                 imgCard.classList.add("card");
+                if (item.user.first_name === null || item.user.last_name === null || item.user.location === null) {
+                    `${item.user.first_name} === ""`;
+                    `${item.user.last_name} === ""`;
+                    `${item.user.location} === ""`;
+                }
 
                 imgCard.innerHTML = `<img src=${item.urls.thumb} />`
                 imgName.innerHTML = `${item.user.first_name} ${item.user.last_name}`
+                if (item.user.first_name === null) {
+                    imgName.innerHTML = `${item.user.last_name}` 
+                }
+                else if (item.user.last_name === null){
+                    imgName.innerHTML = `${item.user.first_name}`  
+                }
                 imgLocation.innerHTML = `${item.user.location}`
+                if (item.user.location === null) {
+                    imgLocation.innerHTML = "";
+                }
+               
                 overlay.append(imgName)
                 overlay.append(imgLocation)
                 imgCard.append(overlay)
@@ -55,4 +72,14 @@ const getData = () => {
         })
 }
 
-window.onload = () => getData()
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    slide1.innerHTML = "";
+    slide2.innerHTML = "";
+    slide3.innerHTML = "";
+    getData(input.value);
+    input.value = "";
+
+});
+
+window.onload = () => getData("african")
