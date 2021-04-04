@@ -18,7 +18,7 @@ const getData = query => {
         .then(res => res.json())
         .then(data => {
             // for searches with no result
-            if(data.results.length=== 0) {
+            if(data.results.length === 0) {
                 let emptySearch = document.createElement("h1")
                 emptySearch.innerHTML = `Search Results for "${query}"`
                 let emptyExp = document.createElement("h3")
@@ -37,7 +37,7 @@ const getData = query => {
                 let imgName = document.createElement("h2")
                 let imgLocation = document.createElement("p")
        
-                imgCard.innerHTML = `<img src=${item.urls.thumb} />`
+                imgCard.innerHTML = `<img src=${item.urls.thumb} class='gridImages'/>`
                 imgName.innerHTML = `${item.user.first_name} ${item.user.last_name}`
                 if (item.user.first_name === null) {
                     imgName.innerHTML = `${item.user.last_name}`
